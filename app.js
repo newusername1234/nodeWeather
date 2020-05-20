@@ -9,6 +9,7 @@ It feels like ${res.body.current.feelslike}`);
 });
 
 request({url: mapURL, json: true}, (err, res) => {
-    const latLongArr = res.body.features[0].center;
-    console.log(`lat: ${latLongArr[0]}\nlong: ${latLongArr[1]}`)
+    const latitude = res.body.features[0].center[1];
+    const longitude = res.body.features[0].center[0];
+    console.log(`lat: ${latitude}\nlong: ${longitude}`)
 });
